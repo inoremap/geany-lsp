@@ -49,6 +49,7 @@ typedef struct LspServerConfig
 	gboolean use_without_project;
 
 	gboolean autocomplete_enable;
+	gboolean autocomplete_manual;
 	gchar **autocomplete_trigger_sequences;
 	gboolean autocomplete_use_label;
 	gboolean autocomplete_apply_additional_edits;
@@ -77,6 +78,7 @@ typedef struct LspServerConfig
 	gint hover_popup_max_paragraphs;
 
 	gboolean signature_enable;
+	gboolean signature_manual;
 
 	gboolean goto_enable;
 

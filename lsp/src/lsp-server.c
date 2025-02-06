@@ -943,6 +943,7 @@ static void load_config(GKeyFile *kf, const gchar *section, LspServer *s)
 	get_bool(&s->config.send_did_change_configuration, kf, section, "send_did_change_configuration");
 
 	get_bool(&s->config.autocomplete_enable, kf, section, "autocomplete_enable");
+	get_bool(&s->config.autocomplete_manual, kf, section, "autocomplete_manual");
 
 	get_strv(&s->config.autocomplete_trigger_sequences, kf, section, "autocomplete_trigger_sequences");
 	get_strv(&s->config.project_root_marker_patterns, kf, section, "project_root_marker_patterns");
@@ -970,6 +971,7 @@ static void load_config(GKeyFile *kf, const gchar *section, LspServer *s)
 	get_int(&s->config.hover_popup_max_lines, kf, section, "hover_popup_max_lines");
 	get_int(&s->config.hover_popup_max_paragraphs, kf, section, "hover_popup_max_paragraphs");
 	get_bool(&s->config.signature_enable, kf, section, "signature_enable");
+	get_bool(&s->config.signature_manual, kf, section, "signature_manual");
 	get_bool(&s->config.goto_enable, kf, section, "goto_enable");
 	get_bool(&s->config.show_server_stderr, kf, section, "show_server_stderr");
 

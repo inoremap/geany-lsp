@@ -198,6 +198,9 @@ static void autocomplete_perform(GeanyDocument *doc, gboolean force, gpointer us
 	if (!srv)
 		return;
 
+	if (!force && srv->config.autocomplete_manual && !SSM(doc->editor->sci, SCI_AUTOCACTIVE, 0, 0))
+		return;
+
 	lsp_autocomplete_completion(srv, doc, force);
 }
 
@@ -218,6 +221,9 @@ static void calltips_show(GeanyDocument *doc, gboolean force, gpointer user_data
 	LspServer *srv = lsp_server_get(doc);
 
 	if (!srv)
+		return;
+
+	if (!force && srv->config.signature_manual)
 		return;
 
 	lsp_signature_send_request(srv, doc, force);
